@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Name - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(120deg, #f4f4f4, #d9d9d9);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0.5rem 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 30px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        section {
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 1000px;
+        }
+
+        #about, #skills, #contact {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        #about:hover, #skills:hover, #contact:hover {
+            transform: translateY(-10px);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+            color: #6a11cb;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label, form input, form textarea, form button {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        form input, form textarea {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: border 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border: 1px solid #6a11cb;
+        }
+
+        form button {
+            padding: 15px;
+            background: #6a11cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #2575fc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #6a11cb;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Your Name</h1>
+        <p>Web Developer | Designer | Creative Enthusiast</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm [Your Name], a passionate web developer with expertise in creating modern, responsive, and user-friendly websites. I love working on exciting projects and learning new technologies.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript & jQuery</li>
+            <li>React & Angular</li>
+            <li>Node.js & Express</li>
+            <li>Python & Django</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+
+    <script>
+        // Form Validation with Alert Enhancement
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill out all fields.");
+            } else {
+                alert(`Thank you, ${name}! Your message has been sent.`);
+            }
+        });
+    </script>
+</body>
+</html>
